@@ -1,0 +1,6 @@
+AA_table = function(){
+  AA = c("A","R","N","D","B","C","Q","E","Z","G","H","I","L","K","M","F","P","S","T","W","Y","V")
+  weight = c(89,174,132,133,133,121,146,147,147,75,155,131,131,146,149,165,115,105,119,204,181,117)
+  charge = c("Nonpolar","Basic","Polar","Acidic","NA","Polar","Polar","Acidic","NA","Nonpolar","Basic","Nonpolar","Nonpolar","Basic","Nonpolar","Nonpolar","Nonpolar","Polar","Polar","Polar","Polar","Nonpolar")
+  table = data.frame(AA,weight,charge,stringsAsFactors = F)
+  }
