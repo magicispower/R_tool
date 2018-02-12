@@ -1,0 +1,21 @@
+weight = function (sequence){
+  source('~/R projects/R tool/AA_table.R')
+  library(hashmap)
+  df = AA_table()
+  ##names(df) = NULL
+  weight = 0
+  AA = NULL
+  WW = NULL
+  ## aims to create a hashmap based on data from AA_table() aka df
+  for(i in 1:22){
+    AA = c(AA,df[i,1])
+    WW = c(WW,df[i,2])
+  }
+  weight_hash = hashmap(AA,WW)
+  numberstring_split <- strsplit(sequence, "")[[1]] ## split string into character arrays
+  for (number in numberstring_split) {
+    weight = weight + weight_hash[[number]]
+  }
+  ## returns a string value of the weight for tool_gui to use
+  return(toString(weight))
+}
