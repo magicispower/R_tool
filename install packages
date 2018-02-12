@@ -1,0 +1,4 @@
+install.packages("hashmap")
+install.packages("gWidgets")
+install.packages("gWidgetsRTtk2")
+install.packages("ggplot2")
