@@ -1,4 +1,4 @@
-
+frequency = function(sequence){
 a <- nchar(sequence)
 A1 <- 0
 R1 <- 0
@@ -93,4 +93,5 @@ for (i in 1:a){
            V1 <- V1 + 1
          },
            )
+}
 }
