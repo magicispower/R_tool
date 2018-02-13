@@ -23,6 +23,8 @@ tool_gui = function(){
     atomic_weight = weight(y)
     z = levels(x[2,1])
     text4 = glabel(paste("Atomic weight of ",z," = ",atomic_weight, "dalton"),container = first, editable = F)
+    len = nchar(y)
+    text5 = glabel(paste("Length of protein = ",len, " amino acids"),container = first, editable = F)
     if(svalue(selection) == "chart 1"){
       ft = frequency(y)
       frequency_tip = glabel("Frequency Table", container = finish, editable = F)
