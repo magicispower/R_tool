@@ -22,10 +22,10 @@ tool_gui = function(){
     text2 = gtable(x, container = finish, multiple = T)
     atomic_weight = weight(y)
     z = levels(x[2,1])
-    text4 = gtext(paste("Atomic weight of ",z," = ",atomic_weight, "dalton"),container = first)
+    text4 = glabel(paste("Atomic weight of ",z," = ",atomic_weight, "dalton"),container = first, editable = F)
     if(svalue(selection) == "chart 1"){
       ft = frequency(y)
-      frequency_tip = gtext("Frequency Table", container = finish, height = 100)
+      frequency_tip = glabel("Frequency Table", container = finish, editable = F)
       frequency_table = gtable(ft,container = finish, multiple = T)
     }
     })
