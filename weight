@@ -14,7 +14,13 @@ weight = function (sequence){
   weight_hash = hashmap(AA,WW)
   numberstring_split <- strsplit(sequence, "")[[1]] ## split string into character arrays
   for (number in numberstring_split) {
-    weight = weight + weight_hash[[number]]
+    if(is.na(weight_hash[[number]]))
+    {
+    
+    }
+    else{
+      weight = weight + weight_hash[[number]]
+    }
   }
   ## returns a string value of the weight for tool_gui to use
   return(toString(weight))
