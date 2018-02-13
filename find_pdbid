@@ -1,0 +1,5 @@
+find_pdbid = function(file){
+  row1 = file[1,1]
+  pdbid = substr(row1,2,5)
+  return(pdbid)
+}
