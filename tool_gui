@@ -3,6 +3,7 @@ tool_gui = function(){
   library(gWidgetsRGtk2)
   source('~/R projects/R tool/weight.R')
   source('~/R projects/R tool/main.R')
+  source('~/R projects/R tool/frequency.R')
   win = gwindow("PDB tool", width = 700, height = 300)
   first = ggroup(container = win, horizontal = F)
   uplo = ggroup(container = first)
@@ -16,10 +17,16 @@ tool_gui = function(){
     a = gfile()
     x = main(a)
     y = levels(x[2,3])
-    svalue(h$obj) <- "clicked"
+    ##svalue(h$obj) <- "clicked"
     ##insert(text3,y)
     text2 = gtable(x, container = finish, multiple = T)
     atomic_weight = weight(y)
-    text4 = gtext(paste("Atomic weight = ",atomic_weight, "daltons"),container = first)
-  })
+    z = levels(x[2,1])
+    text4 = gtext(paste("Atomic weight of ",z," = ",atomic_weight, "dalton"),container = first)
+    if(svalue(selection) == "chart 1"){
+      ft = frequency(y)
+      frequency_tip = gtext("Frequency Table", container = finish, height = 100)
+      frequency_table = gtable(ft,container = finish, multiple = T)
+    }
+    })
 }
