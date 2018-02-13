@@ -1,0 +1,9 @@
+find_sequence <- function(file){
+  columns <- 2:nrow(file)
+  sequence = ""
+  for(i in columns){
+    row = file[i,1]
+    sequence = paste(sequence,row, sep ="")
+  }
+  return(sequence)
+}
