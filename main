@@ -1,0 +1,16 @@
+main = function(input){
+  #main function has to be sourced every new RStudio start.
+  #not sure how to sourcing should be handeled in the tool. More research to be done on stand alone tools.
+  source('~/R projects/R tool/find_pdbid.R')
+  source('~/R projects/R tool/find_chain.R')
+  source('~/R projects/R tool/find_sequence.R')
+  #file is a "table" representation of FASTA txt file. One row made up of pdbid,chain, and sequence layers from pdb file.
+  file = read.table(input)
+  pdbid = find_pdbid(file)
+  chain = find_chain(file)
+  #concatenating each row of the sequence into one string for ease of analyzing.
+  sequence = find_sequence(file)
+  #a data.frame with dimensions 2 rows by 3 columns
+  dt = data.frame(pdbid,chain,sequence)
+  return(dt)
+}
